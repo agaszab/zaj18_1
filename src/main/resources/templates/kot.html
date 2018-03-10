@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <meta charset="UTF-8"/>
+
+    <title>Zwierzęta</title>
+    <style>
+        body {
+            background-image: url("kotbg.jpg");
+            color: white;
+            font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 25px;
+        }
+
+        .op {
+            padding: 20px;
+            background-color: #c2f79b;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: -1;
+            margin: 0 100px;
+            width: 60%;
+        }
+
+        .container {
+            margin-top: 30px;
+            filter: opacity(1);
+            z-index: 31;
+            width: 80%;
+        }
+
+        h1 {
+            padding-top: 50px;
+            padding-bottom: 10px;
+            padding-left: 200px;
+            color: #fff737;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Schronisko dla zwierząt</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="zwierzaki">Pokaż zwierzęta do adopcji</a></li>
+            <li><a href="dodaj">Dodaj zwierzę do adopcji</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="op border border-white rounded">
+<div class="container">
+
+    <h1 th:text="${imie}"></h1>
+    <div class="row align-items-start">
+        <div class="col">
+            Wiek: <span th:text="${wiek}"></span>
+           <br/><br/> <span th:text="${opis}" ></span>
+            <br/><br/>  <img  th:src="${imie}+'.jpg'" width="400" height="300">
+
+        </div>
+
+    </div>
+
+
+</div>
+</div>
+</body>
+</html>
