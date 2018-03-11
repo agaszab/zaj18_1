@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"/>
 <html lang="en">
 <head>
 
@@ -77,8 +77,8 @@
     <div class="container">
         <div class="row align-items-start">
           <span  th:each="cat: ${koty}">
-          <a th:href="'kot?name='+${cat.name}" class="belka list-group-item "><span th:text="${cat.name}+'   wiek: '"></span><span th:text="${cat.age}"></span></a>
-           <img style="margin-bottom:20px;" th:src="${cat.name}+'.jpg'" width="110" height="80">
+          <a th:href="'kot?name='+${cat.name}" class="belka list-group-item "><span th:text="'Imię: '+${cat.name}+'   wiek: '+${cat.age}"></span></a>
+           <img style="margin-bottom:20px;" th:src="${cat.img}" width="110" height="80">
           </span>
         </div>
     </div>

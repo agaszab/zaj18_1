@@ -4,6 +4,24 @@ public class Cat {
    private String name;
    private int age;
    private String text;
+   private String img;
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+
+
+    public Cat(String name, int age, String text, String img) {
+        this.name = name;
+        this.age = age;
+        this.text = text;
+        this.img = img;
+    }
 
     public Cat(String name, int age, String text) {
         this.name = name;
