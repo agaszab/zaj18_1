@@ -37,10 +37,24 @@ public class AnimalsController {
         return "zwierzaki"; // nazwa pliku html
     } */
 
-    @RequestMapping("/kot")
-    public String cat (Model model, @RequestParam String name, String scr) {
+    @GetMapping("/kot")
+    public String cat (Model model, @RequestParam String name) {
 
-        for (int i = 0; i < animals.size(); i++) {
+        for(Cat kot: animals) {
+           if (name.equals(kot.getName())) {
+               int age=kot.getAge();
+               String opis=kot.getText();
+               String img=kot.getImg();
+
+               model.addAttribute("imie", name);
+               model.addAttribute("wiek", age);
+               model.addAttribute("opis", opis);
+               model.addAttribute("img", img);
+
+           }
+        }
+
+      /*     for (int i = 0; i < animals.size(); i++) {
 
             if (name.equals(animals.get(i).getName()) )  {
                 int age=animals.get(i).getAge();
@@ -53,7 +67,7 @@ public class AnimalsController {
                 model.addAttribute("img", img);
             }
 
-        }
+        } */
 
         return "kot"; // nazwa pliku html
 
