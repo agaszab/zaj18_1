@@ -25,12 +25,17 @@ public class AnimalsController {
 
 
 
-    @RequestMapping("/zwierzaki")
+    @RequestMapping("/")
+    public String cats(Model model) {
+        model.addAttribute("koty", animals);
+        return "index"; // nazwa pliku html
+    }
+
+ /*   @RequestMapping("/zwierzaki")
     public String cats(Model model) {
         model.addAttribute("koty", animals);
         return "zwierzaki"; // nazwa pliku html
-    }
-
+    } */
 
     @RequestMapping("/kot")
     public String cat (Model model, @RequestParam String name, String scr) {
@@ -64,7 +69,7 @@ public class AnimalsController {
     @PostMapping("/add")
     public String add( Cat cat) {
         animals.add(cat);
-        return "redirect:/zwierzaki";
+        return "redirect:/";
     }
 
 
